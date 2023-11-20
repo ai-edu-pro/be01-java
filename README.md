@@ -1,2 +1,2 @@
 # be01-java
-## Java 문법
+### Java 문법
