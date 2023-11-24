@@ -1,0 +1,504 @@
+>> day21 - 23/11/27
+
+  > 배열(Array)
+
+  > sort (정렬)
+   - 선택, 버블 소트
+
+  > 함수(method)
+
+  > return 
+
+ > overload(중복함수) 
+  
+  cf) override 
+
+===============================
+>> day20 - 23/11/24
+
+  > 배열(Array)
+   - 일괄처리
+   - 동일한 데이터 모임
+   - 메모리상에 연속적 모임
+   - index 는 0부터 시작함
+   - for문이랑 친함
+
+  - 형식>
+   자료형[] 배열명 = new 자료형[크기]; 
+   int[] a = new int[30];   // int a[] = new int[30]
+
+  자료형[][] 배열명 = new 자료형[행크기][열크기]; 
+   int[][] a = new int[2][3];
+
+  자료형[][][] 배열명 = new 자료형[면크기][행크기][열크기]; 
+   int[] a = new int[2][2][3];
+  
+ > 확장 for문 
+   for(자료형 변수명 : 컬렉션명 or 배열명) {   
+	반복구문;
+    }
+
+문제1] int[] su = { 1, 7, 4, 7, 55, 90, 100, 7, 2, 7, 23 };
+          7의 개수 구하기
+
+문제2] 11월 한달간(기준 30일)의 강수량을 입력 받아서, 평균 구하는 프로그램 작성
+
+문제3] 7명의 3과목 입력 받고, 총점, 평균, 학점 구하기 - 배열 이용하기 
+
+ > 난수 - 2가지 방법 
+ 1) Math.random()  - java.lang
+
+   Math.random() * n  <=== 0 ~ n-1 값 추출됨
+
+ 2) Random class  - java.util package 
+      nextXXX();
+            자료형
+      nextInt();
+      nextDouble();
+      nextFloat(),.........
+
+    rand.nextInt(n);    // 0 ~ n-1 값 추출됨
+
+
+문제1] 업/다운 게임 프로그램 작성 (난수 이용)
+1~100 숫자 중에서 임의의 난수 추출해 놓고, 사용자는 5번의 기회를줘서 입력 받는다.  
+그 입력 받은 숫자와 추출한 난수가 같은지를 판정하는 프로그램 작성
+
+문제2] 로또 프로그램 작성 :   
+   1 ~ 45 숫자 중에서 6개 추출 (단, 같은수 없어야함)
+
+
+
+ > 함수(method)
+
+
+
+----------------------------------------
+ ** 용어 조사
+ class
+ 정보은닉(캡슐화) / 상속 / 다형성 / 추상화
+ 접근제한자 
+ 생성자함수
+ 멤버변수 / 멤버 함수
+ overload(중복함수)
+ override
+ object / instance
+ interface
+ abstract 
+ this / static 
+
+========================
+>> day19 - 23/11/23
+
+  >  제어문
+ 3) 반복문
+   for 
+   foreach (확장for문)
+   while
+   do~ while
+
+ // 변수초기화
+while( 조건 ) {
+	반복실행문;
+	증감식; 
+}
+------------------------------------
+ // 변수초기화
+do {
+	반복실행문;
+	증감식; 
+} while( 조건 );
+	
+
+
+ 4) 기타
+   break
+   continue
+
+과제1] 1 + (1 + 2) + (1 + 2 + 3) + (1 + 2 + 3 + 4) + (1 + 2 + 3 + 4 + 5) = ? 35
+
+과제2] (-1) + 2 + (-3) + 4 + (-5) + ... + (-9) + 10 = ?   5
+
+과제3] 1/2 + 2/3 + 3/4 + 4/5 + 5/6 + 6/7 + 7/8 +  8/9 + 9/10 = ?  7.98
+
+과제4] 3개 정수 입력 받아서 큰 순으로 출력하기
+3
+4
+5
+
+ result >
+  5 > 4 > 3
+
+ > import / export 방법
+
+ > 배열(Array)
+
+ > 함수(method)
+
+==================================
+>> day18 - 23/11/22
+
+  >  제어문
+ 1) 비교문
+    if~else
+
+ //문제1] 숫자 2개 입력 받아서 큰수 출력하는 프로그램 작성
+
+ 문제2] 년도 입력 받아서 윤/평년 판정 프로그램 작성
+// 윤년/평년 판정 프로그램 작성
+/*
+ *  if (년도 % 4 == 0) 
+ *       if( (년도 % 100 != 0)  || (년도 % 400 == 0) )  
+ *             "윤년" ;
+ */
+
+ 문제3] 전산,영어,국어 점수 입력 받아서 평균 60점이상이고,
+     각 과목 과락 40점이하면 과목 불합격 처리하는 프로그램 작성
+
+ 2) 선택문
+    switch ~ case
+
+ 3) 반복문
+   for 
+   foreach (확장for문)
+   while
+   do~ while
+
+ 형식>
+for(초기값; 조건; 증감식) {
+	반복구문 ;
+}	
+
+for(초기식;조건식;증감식) {
+	수행문1;
+	수행문2;
+  }
+
+ int a = 1, b;
+ for( a = 1, b = 2;  a <= 2 ; a++, b+=2 ) {
+	S.o.p( a + "\t" )
+ }
+
+ int a = 1, b = 2;
+  for( ;  a <= 2 ;  ) {
+	S.o.p( a + "\t" );
+    	a++;
+	b+=2;
+ }
+
+ - 초기값, 증감식은 2개 이상 기재 가능
+   (단, 조건은 오직 1개여야함 )
+ - 초기값, 증감식은 생략 가능 
+   (단, 조건 생략하면 무한루프임)
+
+ - 무한 루프
+ for( ; ; )  {
+    S.o.p( a + "\t" );
+    if(조건) break;  // 탈출구문 
+ }
+
+ 문제] 1~100까지의 합 구하는 프로그램 작성 
+
+ - 이중(중첩== 다중) for문
+
+ for(초기값; 조건1; 증감식) {
+
+
+	for(초기값; 조건2; 증감식) {
+
+		반복구문 ;
+
+	}
+}
+
+// 과제2] 사칙연산 프로그램 작성(예외처리하기)
+// 숫자 2개 입력 받고, 연산자(+, -, *, /) 1개 입력 받아서  <--- string , char
+
+ result>
+ 3
+ 5
+ +
+
+ 3 + 5 = 8 
+
+과제3] 
+1. 	2.	3.	4.
+*	*****	    *	*****
+**	****	   **	 ****
+***	***	  ***	  ***
+****	**	 ****	   **
+*****	*	*****	    *
+
+5.		6.
+    *		 *********
+   ***		  *******
+  *****		   *****
+ *******		    ***
+*********	   	     *
+
+	7.			
+	    *		
+	   ***		
+	  *****		
+	 *******	
+	*********	
+	 *******	
+	  *****		
+	   ***		
+	    *
+           8.	
+	    *		
+	   * *		
+	  *   *		
+	 *      *	
+	*        *	
+	 *      *	
+	  *   *		
+	   * *		
+	    *	
+
+
+ 4) 기타
+   break
+   continue
+
+ > import / export 방법
+
+ > Exception (예외처리)
+ Java는 의무적(반드시)으로 예외처리를 해야하는 상황들이 있음.
+ -- 네트워크, 데이터베이스(JDBC), Thread, IO(입출력), File,......
+
+ 형식>
+   try {
+	정상코드(또는 예외 발생 예측 코드);
+  } catch(Excption e ) {
+  	예외 발생시 처리할 코드 ;
+  }
+
+ 1) try ~ catch : 직접처리  <--- 권장
+ 2) throws : 위임
+ 3) throw : 예외 던지기 
+
+ > 배열(Array)
+ > 함수(method)
+
+#######################
+1. 이동혁 / 박민성 / 박재린 / 이경민 / 고라희 
+2. 정수민 / 김정민 / 윤채영 / 임성현
+3. 이영진 / 최원규 / 안우용 / 김단아
+4. 전승민 / 박대호 / 심규혁 / 김민성 
+5. 김민우 / 주현성 / 박민희 / 우지영 
+
+==========================================
+>> day17 - 23/11/21
+
+ ## 기본 문법
+ > github & eclipse 연동
+
+
+ >  연산자
+  최단산쉬관논삼대콤
+
+ 문제1] 월급을 단위로 계산하기
+            pay = 567890; 
+	result :
+	만원 : 56장
+	천원 : 7장
+	백원 : 8개
+	십원 : 9개 
+
+ 문제2] int su = 12345;
+
+  시 : 분 : 초 
+        60초 => 1분
+  60분 
+      60초 ==> 3600
+
+  3 : 25 :  45
+
+  ## 0, 0.0, NULL 를 제외한 모든 값은 '참'이다.
+
+ > 입력 받기
+ java.io <---- Input / Output
+ java.util <---- Scanner  , JDK 5.x 부터 도입됨
+
+ import package
+
+ nextXXX()
+       자료형
+ nextInt()
+ nextFloat()
+ nextDouble()
+ next()  vs  nextLine()  <--- String input method
+
+ >  제어문
+ 1) 비교문
+    if~else
+
+ //문제1] 숫자 2개 입력 받아서 큰수 출력하는 프로그램 작성
+
+ 문제2] 년도 입력 받아서 윤/평년 판정 프로그램 작성
+// 윤년/평년 판정 프로그램 작성
+/*
+ *  if (년도 % 4 == 0) 
+ *       if( (년도 % 100 != 0)  || (년도 % 400 == 0) )  
+ *             "윤년" ;
+ */
+
+ 문제3] 전산,영어,국어 점수 입력 받아서 평균 60점이상이고,
+     각 과목 과락 40점이하면 과목 불합격 처리하는 프로그램 작성
+
+
+ 2) 선택문
+    switch ~ case
+
+ 3) 반복문
+   for 
+   foreach (확장for문)
+   while
+   do~ while
+
+ 4) 기타
+   break
+   continue
+
+
+ > import / export 방법
+
+ > Exception (예외처리)
+
+ > 함수(method)
+ > 배열(Array)
+==========================================
+>> day16 - 23/11/20
+
+
+ ## 기본 문법
+
+ > 이클립스 사용법 
+
+** 문제 발생시 확인
+ 1) properties > project facets
+ 2) properties > java build path
+ 3) 하단 : problems  or  markers 
+
+ > 접근지정자
+  public  >  protected  > default  > private
+
+ > 자료형(Data Type)
+   - 기본자료형
+   - 참조형
+
+ >  연산자
+ >  제어문
+   
+  > Java API
+  https://docs.oracle.com/javase/8/docs/api
+  https://docs.oracle.com/en/java/javase/11/docs/api/index.html
+
+ > 환경변수 설정
+  1. JAVA_HOME
+     C:\Program Files\Java\jdk-11
+
+  2. CLASSPATH
+     .;
+
+  3. 편집하세요 Path
+     %JAVA_HOME%\bin
+
+ 
+ -- cmd> java  or  javac  ,   version 확인 java -version 
+
+public  class  ClassName {
+	public static void main(String[] args) {  //  시작점(진입점)
+		int x = 55;
+		System.out.print("Hello World!!"); // 문장 종결 기호 ;
+
+	} // end main
+
+ }  // end class
+
+ >  컴파일시
+ cmd> javac  파일명.확장자
+          javac   HelloJava.java 
+
+  cf) 한글 포함 되어 에러 발생시 해결 방법
+ cmd> javac -encoding UTF-8  HelloJava.java
+
+ > 실행시
+  cmd> java  파일명 
+           java   HelloJava 
+
+ > 출력함수
+ print()  : 개행 없이 출력
+ printf() : 서식을 이용한 출력 - %c, %s, %d, %f,.......
+ println() : 출력하고 개행(줄바꿈)
+
+실습문제] Info.java
+   이름, 주소, 연락처  출력하는 프로그램 작성하세요.
+ 
+  - package > class > method > field 
+
+  > JDK 설치 및 환경설정
+   - JDK : 개발 + 실행 환경
+   - JRE :  실행환경
+
+  > JDK 11 download
+ https://www.oracle.com/kr/java/technologies/javase/jdk11-archive-downloads.html
+
+ > eclipse : 2020-09
+  https://www.eclipse.org/downloads/packages/release/2020-09/r
+
+  > eclipse : 2022-06
+  https://www.eclipse.org
+
+
+ > 시스템 확인하기
+   - 메모리 64
+   - 자바 설치 유무
+
+C:\Program Files\Java\jdk-11
+===================================
+1. 개인과제
+2. 팀과제
+   가) 일일과제 - 알고리즘 문제 
+   가-2) 주과제 - 발표(문서, 발표)
+
+   나) 미니프로젝트 - 2~3회 (개월수에 따라 차등 있음)
+       한화 기수님들은 기업체 수행과제 있음
+   다) 파이널 과제 - 1회 (최종)
+
+
+
+*** 유용한 사이트 ************************************
+ https://www.javatpoint.com
+
+ > 전산용어
+ http://www.terms.co.kr
+ https://ko.wikipedia.org
+
+ http://www.etnews.com
+
+ https://www.codeproject.com
+
+ > 동영상 강좌 & 문제 은행
+ https://cafe.naver.com/thisisjava
+ https://cafe.naver.com/javachobostudy
+ https://www.orentec.co.kr/
+ 신입SW인력을 위한 실전 자바(Java)
+ https://www.youtube.com/playlist?list=PLieE0qnqO2kTyzAlsvxzoulHVISvO8zA9
+ https://www.opentutorials.org/course/1223
+
+
+ > 자격증
+   ocjp
+   정보처리 기사(산업기사)
+
+ > 알고리즘
+ https://www.acmicpc.net
+https://codeup.kr
+https://leetcode.com/problemset/all
+ https://programmers.co.kr
+ https://swexpertacademy.com/main/main.do
+
+-------------------------------------------------
