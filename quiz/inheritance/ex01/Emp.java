@@ -1,6 +1,7 @@
 package quiz.inheritance.ex01;
 
-public class Emp {
+public class Emp {  // Super class
+	
 	protected String empNum, name, position, dept, phone;
 	
 	public Emp(){}

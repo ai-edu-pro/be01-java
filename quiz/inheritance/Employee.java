@@ -2,7 +2,7 @@ package quiz.inheritance;
 
 import java.util.Scanner;
 
-public class Employee {
+public class Employee {  // Super class
 	
 	protected int empNO;
 	protected String name, dept, phone;
@@ -10,12 +10,13 @@ public class Employee {
 	Scanner sc = new Scanner(System.in);
 	
 	public Employee() {
+//		input();
 	/*	int num ;
 		String name, dept, phone;
 		System.out.print("empNO = ");			num = sc.nextInt();
-		System.out.print("name = ");				name = sc.next();
-		System.out.print("dept = ");				dept = sc.next();
-		System.out.print("phone = ");				phone = sc.next();		
+		System.out.print("name = ");			name = sc.next();
+		System.out.print("dept = ");			dept = sc.next();
+		System.out.print("phone = ");			phone = sc.next();		
 		this.empNO = num;
 		this.name = name;
 		this.dept = dept;
@@ -24,14 +25,10 @@ public class Employee {
 	public void input(){   // 입력 메소드 
 		int num ;
 		String name, dept, phone;
-		System.out.print("empNO = ");		  this.empNO= sc.nextInt();	 //num = sc.nextInt();
-		System.out.print("name = ");				name = sc.next();
-		System.out.print("dept = ");				dept = sc.next();
-		System.out.print("phone = ");				phone = sc.next();		
-		//this.empNO = num;
-		this.name = name;
-		this.dept = dept;
-		this.phone = phone;
+		System.out.print("empNO = ");		    this.empNO= sc.nextInt();	 //num = sc.nextInt();
+		System.out.print("name = ");			this.name = sc.next();
+		System.out.print("dept = ");			this.dept = sc.next();
+		System.out.print("phone = ");			this.phone = sc.next();		
 	}
 	
 	public Employee(int empNO, String name, String dept, String phone) {
@@ -86,8 +83,8 @@ public class Employee {
 	}*/
 	
 	public void disp() {
-		System.out.println("사원 번호 :" + empNO + "\n 이름 : " + name);
-		System.out.println("부서 :" + dept + "\n 연락처 : " + phone);
+		System.out.println("사원 번호 :" +empNO + "\n이름 : " + name);
+		System.out.println("부서 :" + dept + "\n연락처 : " + phone);
 	}
 }
 
@@ -105,3 +102,8 @@ public class Employee {
     user method  <-- 계산 관련 함수 등등
 
 */
+
+
+
+
+

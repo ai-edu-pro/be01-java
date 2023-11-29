@@ -6,7 +6,12 @@ public class Sales extends Regular {
 		super(empNum, name, title, dept, phone);
 		pay *= (1.2);
 	}
+	
+//	public int getPay() {
+//		return pay *= (1.2);
+//	}
 	public void display(){
+		super.display();
 		System.out.println(", "+pay);
 	}
 }

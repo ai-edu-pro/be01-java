@@ -5,7 +5,7 @@ public class Regular extends Employee {
 	protected int pay;
 
 	public Regular() {
-		//super.input();
+//		super.input();
 		/*System.out.print("pay = ");					
 	    pay = sc.nextInt();*/
 	}

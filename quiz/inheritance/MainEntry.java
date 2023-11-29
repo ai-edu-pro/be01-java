@@ -4,7 +4,10 @@ import java.util.Scanner;
 public class MainEntry {
 	public static void main(String[] args) {
 		
-		Regular re;
+//		Employee emp = new Employee();
+//		emp.disp();
+		
+		Regular re;  //객체 선언
 		Sales sa ;
 			
 		Scanner sc = new Scanner(System.in);
@@ -17,7 +20,7 @@ public class MainEntry {
 		
 		switch ( choice ) {
 			case 1 :
-				re = new Regular();
+				re = new Regular(); // 객체생성, 메모리에 할당, 생성자함수 자동호출
 				re.input();
 				re.disp();
 				break;

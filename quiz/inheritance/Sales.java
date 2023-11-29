@@ -5,6 +5,7 @@ public class Sales extends Regular {
 	private double commision, result;
 
 	public Sales() {
+		super.input();
 		System.out.print("commision = ");		
 		commision = sc.nextDouble();
 	}
