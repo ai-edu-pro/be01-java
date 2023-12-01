@@ -1,3 +1,233 @@
+>> day26 - 23/12/04
+
+ > Collection (자료구조)
+
+ > Generic(제너릭)
+
+ > IO ( Input  Ouput ) <----- java.io package
+
+ > RandomAccessFile
+
+ > Thread 
+
+ > Syncronized
+
+  > inner class
+
+  > event
+
+  > GUI : awt, swing, JavaFX ( jdk 7.0 이후~ )
+
+ > network
+
+ > JDBC
+
+====================================
+>> day25 - 23/12/01
+
+ > enum 열거형 - 새로운 클래스 타입을 정의하는것
+   - 특정한 값만을 가질 수 있는 데이터 타입을 정의 할때 필요하다.
+ 
+ 형식>
+  [접근지정자] enum 열거형이름 { 필요한 상수들 나열,..... }
+
+
+ > API <----- 자바에서 자주 쓰는 클래스들 소개!!
+ java.lang package
+ 
+   Object
+   String
+   StringBuffer   <--- JDK 1.x  ,  thread 
+   StringBuilder  <--- JDK 5.x
+   ....
+ 
+   Wraper class : 기본 자료형에 대응되는 클래스형 자료형
+    기본 자료형             클래스형(레퍼런스 또는 참조형)자료형
+    int 			Integer
+    float			Float
+    char			Character
+    double		Double
+    ....			....
+
+   java.util package
+   Random class
+   Scanner class
+   날짜관련,...
+   형식지정,..
+   StringTokenizer
+   ....
+
+   java.text.SimpleDateFormat
+
+
+======================================
+>> day24 - 23/11/30
+
+> abstract class (추상클래스)
+   - 미완성 클래스 <--- 자체적으로 객체 생성할 수 없다.
+    (단, 상속 받은 자손 클래스로는 객체 생성 할 수 있다.)
+   - 추상메소드를 갖고 있다.
+    public void disp() {  } //일반메소드
+    public abstract void disp();  // 추상메소드 - 몸체(블럭)를 갖지 않는다.
+  - abstract 
+
+   형식>
+    public abstract class Point {  // 부모 추상 클래스
+		void disp() {   }
+		abstract void show(); // 추상메소드
+    }
+
+    class Sub extends Super {  // 자손(서브) 클래스
+	추상메소드 오버라이드해야한다.
+    }
+
+  ==> 다형성 : overload, abstact 
+
+문제1] Trans 추상클래스 <---- 부모는 모든 자손에게 상속할 수 있는 최소한의 것!!
+       추상메소드 start() /  stop()
+
+  sub class : Subway / Bus / Biclycle / Plain 
+  MainEntry 에서 메인 함수 구현하기 
+ 
+  > interface 
+  - 클래스 아님.(객체 생성 안됨)
+  - implements
+  - 추상메소드, 상수만 가질 수 있다. ( abstract, final 생략 가능 )
+  - 다중 상속 구현,....
+
+문제2]  Trans 인터페이스 
+       추상메소드 start() /  stop()
+
+  sub class : Subway / Bus / Biclycle / Plain 
+  MainEntry 에서 메인 함수 구현하기 
+
+  > final 
+
+     field ---> 값 변경 금지(상수)
+     class ---> 상속금지
+     method --> override 금지
+
+
+  > 사용자 예외 만들기
+
+  > static member : 공유해서 사용
+     1회 초기화 되고, 이전 값을 가지고 사용한다.
+
+ 
+==================================================
+>> day23 - 23/11/29
+
+  > OOP(객체지향)
+  - class 설계 (객체 설계도 :  멤버변수 + 멤버함수)
+
+  class Point {
+	private	 int x, y;
+
+   	public int getX(){
+		return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	// 필요한 메소드 및 여러가지 구현하기	
+ }
+
+ > this : 자기 자신, 객체 생성될때 그 객체의 시작 주소를 갖고 있다.
+     this() : 생성자 함수의 다른 이름, 첫줄에 위치해야한다.
+
+ > 디폴트 생성자 함수  &  API 만들기
+  Cmd>javadoc -encoding UTF-8 MainEntry.java
+  cmd> javadoc  해당파일.java
+
+ > inheritance(상속)
+   - extends
+   - 단일 상속만 지원
+   - super
+   - 재사용
+   - 확장
+
+형식> 
+ class Super {  // 부모 클래스
+
+ }
+
+ class Sub  extends  Super {  // 자식클래스 
+
+ }
+
+ 문제2] class Person {  String name, gender,  int age }  상속한 학생 클래스 까지 구현
+   class Student { int  jumsu  } 
+
+ > this : 자기 자신, 객체 생성될때 그 객체의 시작 주소를 갖고 있다.
+     this() : 생성자 함수의 다른 이름, 첫줄에 위치해야한다.
+
+    super : 부모 클래스의 멤버에 접근할 수 있는 인스턴스  super.disp();
+        super() : 부모클래스의 생성자함수 , 첫줄에 위치해야한다. 
+     
+        Point pt = new Point();   // pt와 같은 역할 
+        pt.disp();  // super.disp();
+
+ > override (재정의) <---- 상속
+   함수명, 리턴타입, 매개변수 모두 같은 함수 
+ 
+실습] 본인들 상속 관련 클래스들 수정(보완)하기.
+ 
+  -- toString()
+
+ 
+===================================
+>> day22 - 23/11/28
+
+ > 배열 함수
+
+ > instance method
+    static method
+    	object.methodName();
+	ClassName.methodName();  // <---
+
+ > debugging (디버깅) 방법
+
+ > OOP(객체지향)
+  - class 설계
+
+ > this : 자기 자신, 객체 생성될때 그 객체의 시작 주소를 갖고 있다.
+     this() : 생성자 함수의 다른 이름, 첫줄에 위치해야한다.
+
+ > 생성자함수(constructor method)
+  - 클래스명과 동일하다
+  - 리턴타입 없음 ( void 조차 사용하지 않음 )
+  - 중복정의 가능함 ( overload 가능 - 중복함수 )
+  -  default constructor 갖고 있음
+    (단, 사용자가 생성자함수 재정의 하면 디폴트 생성자함수 기능 상실함 )
+  - 멤버변수의 초기화 담당함
+
+
+
+** 용어 조사
+ class
+ 정보은닉(캡슐화) / 상속 / 다형성 / 추상화
+ 접근제한자(접근지정자) : private < default < protected < public
+ 생성자함수
+ 멤버변수 / 멤버 함수
+ overload(중복함수)
+ override
+ object / instance
+ interface
+ abstract 
+ this / static 
+
+-----------------------------------------
+==> ZOOM
+https://us02web.zoom.us/j/6037250653?pwd=MHkwOEp4ekZyRjdvSUY4ejJHTUFOUT09
+
+-----------------------------------------
+>> 온라인에서 자바 코딩하기
+ https://www.w3schools.com/java/
+ http://www.tcpschool.com/java/intro
+ http://www.tcpschool.com/examples/tryit/tryJava.php?filename=Intro01
+ https://ideone.com/
+
+============================
 >> day21 - 23/11/27
 
   > 배열(Array)
@@ -5,13 +235,54 @@
   > sort (정렬)
    - 선택, 버블 소트
 
+  https://www.youtube.com/watch?v=gARC8MApdcY
+  https://www.youtube.com/watch?v=lyZQPjUT5B4&t=6s
+
   > 함수(method)
+  메인함수 부담 줄이고, 반복적인 코드를 함수로 만들어서 호출에 의해서 사용함.
+  - instance mehtod : 객체 생성하고 사용해야함(메모리상에 할당이 되어야.....)
+
+   ex) Scanner sc = new Scanner(System.in);
+     int x =  sc.nextInt();
+
+  - static method : 객체 생성 없이 바로 사용 가능함
+        objectName.methodName(); 
+        ClassName.methodName(); 
+
+   ex) S.o.pln(Math.random()); 
+
+  - 매개변수의 유무 / 리턴타입 유무
+ 1) 매개변수 없고, 리턴타입 없는 경우
+   public returnType  methodName() {  }
+
+ 2) 매개변수 있고, 리턴타입 없는 경우
+   public returnType methodName(parameter val1, parameter val2,.....) {   }
+
+ 3) 매개변수 없고, 리턴타입 있는 경우
+   public returnType methodName() {   return value;    }
+
+ 4) 매개변수 있고, 리턴타입 있는 경우
+  public returnType methodName(parameter val1, parameter val2,.....) {  return value;   }
 
   > return 
+   return 값;   // 오직 1개 값 리턴 
+   return x, y; // error
+   return x + y;  // 수식
+
+   return; //제어권 넘김
 
  > overload(중복함수) 
+  함수명 같고, 매개변수의 개수가 다르거나
+  매개변수의 개수가 같다면 자료형이 다른 함수
   
-  cf) override 
+  cf) override  <--- 상속 
+
+문제5] 성적처리 프로그램 함수로 분할(분리)할것
+   입력 함수 input()  - 이름 , 국어, 영어,전산 점수 
+   총점 함수 total(~~~) - 총점 구하는 함수
+   평균 함수 average( ~~ ) - 평균 구하는 함수
+   평점(학점) grade( ~~ ) - 학점 구하는 함수 
+   출력 함수 output( ) - 결과 출력하는 함수 
 
 ===============================
 >> day20 - 23/11/24
@@ -31,7 +302,7 @@
    int[][] a = new int[2][3];
 
   자료형[][][] 배열명 = new 자료형[면크기][행크기][열크기]; 
-   int[] a = new int[2][2][3];
+   int[][][] a = new int[2][2][3];
   
  > 확장 for문 
    for(자료형 변수명 : 컬렉션명 or 배열명) {   
