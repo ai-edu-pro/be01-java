@@ -3,8 +3,10 @@ package day12.util.list;
 import java.util.*;
 
 public class StackEx1 {
+	
 	public static Stack back    = new Stack();
 	public static Stack forward = new Stack();  
+	
 	public static void main(String[] args) {
 		goURL("1.네이트");
 		goURL("2.야후");
@@ -34,11 +36,14 @@ public class StackEx1 {
 		System.out.println();
 	}
 	public static void goURL(String url){
+		
 		back.push(url);
 		if(!forward.empty()) 
 			forward.clear();
 	}
+	
 	public static void goForward(){
+		
 		if(!forward.empty())
 		back.push(forward.pop());
 	}

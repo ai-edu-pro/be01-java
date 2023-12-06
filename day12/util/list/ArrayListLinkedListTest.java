@@ -53,6 +53,7 @@ public class ArrayListLinkedListTest {
             long start = System.currentTimeMillis(); 
             
             for(int i=list.size()-1; i > 0;i--)
+//            for(int i=0; i < list.size()-1 ;i++)
 				list.remove(i); 
             
             long end = System.currentTimeMillis(); 

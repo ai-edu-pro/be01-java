@@ -3,7 +3,8 @@ package day12.util.list;
 import java.util.*;
 import java.io.*;
 
-class PropertiesEx1 {
+class PropertiesEx1 {  // map : key, value 
+	
 	public static void main(String[] args) throws Exception {
 		Properties prop = new Properties();
 
