@@ -1,27 +1,189 @@
->> day26 - 23/12/04
+>> day30 - 23/12/11
 
- > Collection (자료구조)
-
- > Generic(제너릭)
-
- > IO ( Input  Ouput ) <----- java.io package
-
- > RandomAccessFile
-
- > Thread 
-
- > Syncronized
-
-  > inner class
-
-  > event
-
-  > GUI : awt, swing, JavaFX ( jdk 7.0 이후~ )
+> Lambda Expression  
 
  > network
 
  > JDBC
+  - https://mvnrepository.com
+  - https://search.maven.org
 
+================================
+>> day29 - 23/12/07
+
+ > Thread 
+   - 1의 CPU는 1의 작업
+      "시간차"
+  
+   Thread  class
+   Runnable  interface 
+
+   public void run()  {  }   // 스레드 실행부(구현부)
+
+ > Syncronized (동기화)
+
+ public synchronized void deposit(int amount, String name) {
+		임계영역....
+ }
+
+ public void withdraw(int amount, String name) {
+	synchronized (this) {
+		임계영역....
+	}
+ }
+
+  > inner class
+
+  > event
+   ~~~Listener : interface 기반
+   ~~~Apdater : class 기반
+
+
+  > GUI : awt, swing, JavaFX ( jdk 7.0 이후~ )
+
+  
+====================================
+>> day29 - 23/12/07
+
+ > hash table
+   https://velog.io/@edie_ko/hashtable-with-js
+  - 해시 충돌 해결 방법
+ 1) open addressing ( Linear Probing )
+
+ 2) seperate chaining : 버킷에는 링크드 리스트(linked list)나 트리(tree)를 사용
+
+  > File 
+
+ URI
+ URL
+ URN
+
+  DataInputStream		 / DataOutputStream
+  ObjectInputStream 	 / ObjectOutputStream
+ 
+   readXXX();	     		writeXXX(); 	
+       자료형		  	     자료형
+
+
+ > RandomAccessFile : r/w 가능,  seek(long)
+
+문제] 비만도 측정 프로그램 작성 - collection, file, io 이용하기
+    추가 / 삭제 / 출력 / 수정  처리할것 (file 저장 함수 따로 만들수도 있고)
+
+ 몸무게, 키를 입력 받아서  BMI 계산하기
+ BMI = 몸무게 / ( (키 / 100.0) * (키 / 100.0) ); 
+
+  남 : (신장cm - 100) X 0.9
+  여 : (신장cm - 100) X 0.85
+-
+판정>
+18.5 미만 저체중
+18.5 ~ 22.9  정상
+23.0 ~ 24.9  과체중
+25.0  이상 비만 
+
+
+
+===========================================
+>> day28 - 23/12/06
+
+ > Collection 정리 및 오후 시간대에 자료구조 조금씩!!
+   
+ https://www.convertstring.com/Hash/SHA256
+
+  9522471254E1015C187C1E4C4930E85EB159CA8B330099510D80CBF38BA7F534
+
+  2C68318E352971113645CBC72861E1EC23F48D5BAA5F9B405FED9DDDCA893EB4
+  e9a95de0add7606bda402b28a3630cf4b0f8c9b2
+
+
+ > Generic(제너릭) : jdk 5.x 
+
+ > IO ( Input  Ouput ) <----- java.io package, 단방향 처리 
+
+    		Input   			output
+  byte	     ~~~~InputStream 	      ~~~~OutputStream 
+  charater      ~~~~Reader		      ~~~~Writer 
+
+  -- InputStream  : 입력의 최상위 클래스 : read()
+  -- OutputStream : 출력의 최상위 클래스 : write()
+
+
+======================================
+>> day27 - 23/12/05
+
+ > Collection (자료구조) : 시스템에 효율적으로 데이터를 조작, 저장하는 방법에 대한 연구
+ cf) 알고리즘 : 어떤 일에 대한 처리 방법, 절차 
+                     문제 해결 방법을 정의한 '일련의 단계적 절차'이자 어떠한 문제를 해결하기 위한 '동작들의 모임'이다
+
+ 1) Set : 순서없고, 중복허용하지 않음
+     HashSet / TreeSet
+
+ 2) List : 순서있고, 중복허용한다
+  - 변수 ----> 배열( 고정길이 )  -----> 가변길이      
+              int  arr[30] 
+              char[] ch = new char[10];
+
+    Vector <----- jdk 1.x , 가변길이,  동기화 지원
+    ArrayList  <--- jdk 2.x , 가변길이, 동기화 지원 안함.
+    		검색, 대량의 데이터 삽입/삭제
+    LinkedList  <--- data 삽입/삭제 수월함
+    Stack
+    ....
+
+ 3) Map ( set + list ) 
+     <key, value> 한쌍으로 처리 
+    Hashmap / Treemap
+
+  ======================================
+>> day26 - 23/12/04
+
+ > Collection (자료구조) : 시스템에 효율적으로 데이터를 조작, 저장하는 방법에 대한 연구
+ cf) 알고리즘 : 어떤 일에 대한 처리 방법, 절차 
+                     문제 해결 방법을 정의한 '일련의 단계적 절차'이자 어떠한 문제를 해결하기 위한 '동작들의 모임'이다
+
+ 1) Set : 순서없고, 중복허용하지 않음
+     HashSet / TreeSet
+
+ 2) List : 순서있고, 중복허용한다
+  - 변수 ----> 배열( 고정길이 )  -----> 가변길이      
+              int  arr[30] 
+              char[] ch = new char[10];
+
+    Vector <----- jdk 1.x , 가변길이,  동기화 지원
+    ArrayList  <--- jdk 2.x , 가변길이, 동기화 지원 안함.
+    		검색, 대량의 데이터 삽입/삭제
+    LinkedList  <--- data 삽입/삭제 수월함
+
+  메서드 설명 
+boolean offer() Queue(큐)에 객체를 넣는다 
+poll()   Queue(큐)에서 데이터를 꺼내온다. 만일 Queue(큐)가 비어있다면 null 을 반환. 
+peek() 큐의 맨 아래 있는 객체를 반환한다. 이 때 객체를 큐에서 제거하진 않는다
+
+    - LinkedList 참고 사이트
+     http://alecture.blogspot.com/2012/10/linkedlist.html
+
+     Stack     LIFO
+     Queue <-- interface   FIFO 
+    ....
+
+ 3) Map ( set + list ) 
+     <key, value> 한쌍으로 처리 
+    HashMap / TreeMap
+
+ 문제] Video class 
+     title 비디오제목
+     category  장르
+     lend   대여여부
+     lendName  대여자(고객명)
+     lendDate   대여일자(오늘날짜 입력하심 되요)
+
+ Video 추가 / 삭제 / Video 리스트 출력 / 수정 / 프로그램 종료  출력하는 프로그램 작성하기.
+
+   
+
+ ---- 유용한 사이트 ------------------------------------
+ https://e-koreatech.step.or.kr/page/lms
 ====================================
 >> day25 - 23/12/01
 
@@ -54,7 +216,7 @@
    Scanner class
    날짜관련,...
    형식지정,..
-   StringTokenizer
+   StringTokenizer == split 
    ....
 
    java.text.SimpleDateFormat
