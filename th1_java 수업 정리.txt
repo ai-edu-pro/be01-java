@@ -1,12 +1,146 @@
+>> day32 - 23/12/13
+
+  > JDBC
+
+
+ > MVC (Model2)
+
+  Model <--- DB를 클래스로 만든다.
+  View  <--- main
+  Controller <--- 뷰 와 모델을 연결 역할 
+
+ 문제] dept table 이용해서 공통사항은 connect(), selectAll() 으로 만드시고,
+   각 팀별 1팀 - delete 
+  	2팀 - update
+	3팀 - insert
+	4팀 - 조건에 의한 검색 selectByDeptno()
+ 	5팀 - update
+
+
+======================================
+>> day31 - 23/12/12
+
+  > network   <---- java.net.* ; 
+
+  > JDBC
+
+ **************************************************************************
+【 Database별 Driver 와 connection URL 】
+
+DATABASE | VALUE 
+---------------------------------------------------
+ORACLE | DRIVER | oracle.jdbc.driver.OracleDriver 
+| URL | jdbc:oracle:thin:@hostname:port:SID 
+
+MSSQL | DRIVER | com.microsoft.jdbc.sqlserver.SQLServerDriver 
+| URL | jdbc:Microsoft:sqlserver://localhost:1433;databasename=DB명 
+
+MYSQL | DRIVER | org.gjt.mm.mysql.Driver | | (또는)com.mysql.jdbc.Driver
+| URL | jdbc:mysql://localhost:3306/DB명 
+
+MARIA | DRIVER | org.mariadb.jdbc.Driver 
+| URL | jdbc:mariadb://localhost:3306/DB명 
+
+
+(3) 프로그램에서 DB연결
+
+1단계 : JDBC드라이버 로드
+Class.forName("드라이버종류");
+
+★ 드라이버 종류
+1. Access드라이버(ODBC) : Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+2. MySQL 드라이버: Class.forName(“com.mysql.jdbc.Driver”);
+3. 오라클 드라이버 : Class.forName(“oracle.jdbc.OracleDriver”);
+4. MS-SQL 드라이버 : Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver ");
+
+--------------------------------------------------------------------
+예)Connection conn = DriverManager.getConnection("jdbc:odbc:jdbc", "kingsmile", "oracle");
+
+1. Access인경우 : jdbc:odbc:ODBC명
+2. 오라클인경우 : jdbc:oracle:thin:@localhost:1521:SID
+3. MySQL인경우 : jdbc:mysql://localhost:3306/DB명
+4. MS-SQL인경우 : jdbc:Microsoft:sqlserver://localhost:1433;databasename=DB명 
+------------------------------------------------------------------
+  1) 드라이버 로드
+	Class.forName("org.mariadb.jdbc.Driver");
+  2) 연결 
+	Connection conn = DriverManager.getConnection(url, uid, pwd); 
+  3) SQL 명령어 사용
+	Statement stmt = conn.createStatement();
+	ResultSet rs = stmt.executeQuery(" select * from gift "); //반환값 있는 경우
+	-----------------------------------------------------------------
+	stmt.executeUpdate(sql);  // 반환값이 없는 경우 
+  4) 닫기
+	rs.close();    stmt.close();    conn.close();
+
+  - API 확인하기
+
+ > Database 연결 eclipse : Data Source Exploer
+
+
+ > MVC (Model2)
+
+  Model <--- DB를 클래스로 만든다.
+  View  <--- main
+  Controller <--- 뷰 와 모델을 연결 역할 
+
+  - https://mvnrepository.com
+  - https://search.maven.org
+
+=================================
 >> day30 - 23/12/11
 
 > Lambda Expression  
+  JDK 8.0 이상
+  형식>  ( ) -> { }
+   (매개변수 목록) -> { 실행문 }
 
- > network
+  - 불필요한 클래스의 정의도 없다.
+  - 메소드의 리턴 타입도 없고, 이름도 없다. (익명)
+  - Anonymous Function(익명함수) ===> 익명클래스로 봐도 됨
+ 
+ ex)
+  public int sum(int x, int y ) {  return  x + y ;  }
+  ( x ,  y ) -> { x + y }
+
+ -- 장점 --
+ . 코드를 간결하게 만들 수 있다.
+ . 코드가 간결하고 식에 개발자의 의도가 명확히 드러나기에 가독성이 향상된다.
+ . 코딩 시간 줄어듬
+ . 병렬프로그래밍이 가능함 
+
+ -- 단점 -- 
+ . 재사용이 불가능하다
+ . 디버깅이 다소 까다롭다.
+ . 람다를 남발하면 코드가 지저분함(중복 생성 할 가능성이 높음)
+ . 재귀로 만들 경우에는 부적합하다.
+
+ > network   <---- java.net.* ; 
+    - 1개의 회선은 1개 site 
+         " port number " 
+
+  cmd>netstat  -a or -n or -an
+
+   - TCP             vs          UDP
+  신뢰성있음	      신뢰성 낮음	
+  양방향성(전화)	      단방향성(방송국, 편지)
+  채팅프로그램 	      동영상강좌 - 대용량 데이터 전송에 좋음
+	
+ -- packet
+ -- protocal
 
  > JDBC
+
+ https://mariadb.com/kb/en/installing-mariadb-connectorj
+ - 버전별 jar 파일 다운로드 사이트
+ https://mariadb.com/kb/en/mariadb-connector-j-releases
+
+ https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client/3.3.1
+
   - https://mvnrepository.com
   - https://search.maven.org
+
+
 
 ================================
 >> day29 - 23/12/07
