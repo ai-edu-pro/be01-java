@@ -16,7 +16,7 @@ public class MainEntry {
 					//driver:IP:portNmber/DBName
 		String url="jdbc:mariadb://localhost:3306/sampledb";
 		String uid = "root";
-		String pwd = "1004";
+		String pwd = "maria";
 		
 		Connection conn = DriverManager.getConnection(url, uid, pwd);
 		System.out.println("connection success!!");
